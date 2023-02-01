@@ -21,7 +21,6 @@ public class BraceChecker {
                     stack.push(c);
                     break;
                 case ')':
-                   chack =(char) stack.pop();
                     chack=(char)stack.pop();
                     if(chack == '{' || chack == '['){
                         System.out.println("opened " + chack + "but close " + c + "in index " + i);
@@ -50,7 +49,6 @@ public class BraceChecker {
         while ((chack = (char) stack.pop()) != 0) {
             System.out.println("error opened " + chack + "but not closed");
         }
-
     }
 }
 
