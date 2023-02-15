@@ -37,5 +37,51 @@ public class EmployeeStorage {
 
         }
     }
+
+    public void searchEmployeeBySalaryRange(double salary1, double salary2) {
+        for (int i = 0; i < size; i++) {
+            if (array[i].getSalary()>salary1 && array[i].getSalary()<salary2){
+                System.out.println(array[i]);
+            }
+
+        }
+    }
+
+    public void forChangeEmployeePositionById(int id, String position) {
+        for (int i = id; i < size; i++) {
+            if (id == i){
+                array[i].setPosition(position);
+            }
+
+
+        }
+
+    }
+
+    public void printnOnlyActiveEmployees() {
+        for (int i = 0; i < size; i++) {
+            if (array[i].getActive()){
+                System.out.println(array[i]);
+            }
+
+        }
+    }
+
+    public void inactiveEmployeeById(int employeeId) {
+        for (int i = employeeId; i < size; i++) {
+            if (employeeId == i){
+                array[i].setActive(false);
+            }
+        }
+    }
+
+    public void activeEmployeeById(int employeeId) {
+        for (int i = employeeId; i < size; i++) {
+            if (employeeId == i){
+                array[i].setActive(true);
+
+            }
+        }
+    }
 }
 
