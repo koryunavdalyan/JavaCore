@@ -10,6 +10,7 @@ public class Employee {
     private String company;
     private String position;
     private boolean active;
+    private String date;
 
 
     public Employee(String name, String surname, int employeeId, double salary, String company, String position) {

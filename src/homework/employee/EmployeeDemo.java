@@ -1,12 +1,25 @@
 package homework.employee;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class EmployeeDemo {
     private static EmployeeStorage employeeStorage = new EmployeeStorage();
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date();
+        String dateStr = sdf.format(date);
+        System.out.println(dateStr);
+
+        System.out.println("Please write date of birthday");
+        String dobStr = scanner.nextLine();
+        Date dateOfBirthday = sdf.parse(dobStr);
+        System.out.println(date);
+        System.out.println();
         employeeStorage.add(new Employee("goat", "poxosyan", 77, 5.00, "bmw", "admin"));
         boolean run = true;
         while (run) {
@@ -73,11 +86,7 @@ public class EmployeeDemo {
                     break;
                 default:
                     System.out.println("invalide command");
-
-
             }
-
-
         }
 
     }
@@ -100,7 +109,5 @@ public class EmployeeDemo {
         employeeStorage.add(empolyee);
         System.out.println("employee created");
 
-
     }
-
 }
